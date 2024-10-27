@@ -13,8 +13,8 @@ DISM /Online /Enable-Feature /FeatureName:NetFx3 /All /Source:X:\sources\sxs /Li
 # Configure Maximum Password Age in Windows
 net.exe accounts /maxpwage:UNLIMITED
 
-# Allow Execution of PowerShell Script Files
-Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'AllSigned' -Force
+# Allow Execution of PowerShell Script Files (not sure)
+# Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'AllSigned' -Force
 
 # Groups or splits svchost.exe processes based on the amount of physical memory in the system to optimize performance
 $ram = (Get-CimInstance -ClassName Win32_PhysicalMemory | Measure-Object -Property Capacity -Sum).Sum / 1kb

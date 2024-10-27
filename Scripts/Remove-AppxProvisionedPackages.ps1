@@ -23,7 +23,6 @@ Get-AppxProvisionedPackage -Online | Where-Object -Property 'DisplayName' -In -V
   'Microsoft.OutlookForWindows';
   'Microsoft.MSPaint';
   'Microsoft.People';
-  'Microsoft.Windows.Photos';
   'Microsoft.PowerAutomateDesktop';
   'MicrosoftCorporationII.QuickAssist';
   'Microsoft.SkypeApp';

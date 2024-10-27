@@ -1,5 +1,7 @@
 # Powershell Script to Run Various Tweaks, Most of These are from the Chris Titus Tech Windows Utility (Credit:https://christitus.com/windows-tool/)
-# C:\Windows\Setup\Scripts\wintweaks.ps1
+
+# Set Script Name as Window Title
+$host.ui.RawUI.WindowTitle = "$(Split-Path $PSCommandPath -Leaf)"
 
 # Start Transcript to capture script output
 $logFile = "C:\Windows\Setup\Scripts\wintweaks.log"

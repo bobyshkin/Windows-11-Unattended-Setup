@@ -1,5 +1,7 @@
 # Removes Preinstalled Bloatware Apps
-# C:\Windows\Setup\Scripts\remove-packages.ps1
+
+# Set Script Name as Window Title
+$host.ui.RawUI.WindowTitle = "$(Split-Path $PSCommandPath -Leaf)"
 
 Get-AppxProvisionedPackage -Online | Where-Object -Property 'DisplayName' -In -Value @(
   'Microsoft.Microsoft3DViewer';

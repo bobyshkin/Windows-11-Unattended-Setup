@@ -54,7 +54,8 @@ Get-AppxProvisionedPackage -Online | Where-Object -Property 'DisplayName' -In -V
   'Microsoft.RemoteDesktop';
 ) | Remove-AppxProvisionedPackage -AllUsers -Online
 
-Get-AppxProvisionedPackage -AllUsers | Where-Object {$_.Name -Like '*Microsoft.Copilot*'} | Remove-AppxProvisionedPackage -AllUsers -ErrorAction Continue​
+# Didn't work, make pause in the end and see how this package is named
+# Get-AppxProvisionedPackage -AllUsers | Where-Object {$_.Name -Like '*Microsoft.Copilot*'} | Remove-AppxProvisionedPackage -AllUsers -ErrorAction Continue​
 
 Get-WindowsCapability -Online |
 Where-Object -FilterScript {
@@ -68,3 +69,5 @@ Where-Object -FilterScript {
     'Microsoft.Windows.WordPad';
   );
 } | Remove-WindowsCapability -Online
+
+Pause

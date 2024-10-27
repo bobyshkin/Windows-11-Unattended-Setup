@@ -76,6 +76,16 @@
                     <Description>Unloads the Default User Registry Hive</Description>
                     <Path>reg.exe unload "HKU\DefaultUser"</Path>
                 </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>8</Order>
+                    <Description>Disable Copilot</Description>
+                    <Path>cmd.exe /c "reg.exe import "C:\Windows\Setup\Scripts\DisableCopilot.reg" &gt;&gt;"C:\Windows\Setup\Scripts\DisableCopilot.log" 2&gt;&amp;1"</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>9</Order>
+                    <Description>Disable Windows Defender</Description>
+                    <Path>powershell.exe -ExecutionPolicy Bypass -File "C:\Windows\Setup\Scripts\DisableDefender.ps1"</Path>
+                </RunSynchronousCommand>
             </RunSynchronous>
         </component>
     </settings>

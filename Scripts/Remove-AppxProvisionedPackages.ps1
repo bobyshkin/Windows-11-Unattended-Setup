@@ -48,7 +48,11 @@ Get-AppxProvisionedPackage -Online | Where-Object -Property 'DisplayName' -In -V
   'Microsoft.MixedReality.Portal';
   'Microsoft.Windows.Ai.Copilot.Provider';
   'Microsoft.WindowsMeetNow';
+  'Microsoft.Copilot';
+  'Microsoft.RemoteDesktop';
 ) | Remove-AppxProvisionedPackage -AllUsers -Online
+
+Get-AppxProvisionedPackage -AllUsers | Where-Object {$_.Name -Like '*Microsoft.Copilot*'} | Remove-AppxProvisionedPackage -AllUsers -ErrorAction Continue​
 
 Get-WindowsCapability -Online |
 Where-Object -FilterScript {
